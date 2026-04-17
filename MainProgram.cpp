@@ -43,19 +43,15 @@ bool isPrime(int n) {
 }
 
 int maxOfThree(int a, int b, int c) {
+    int maxvalue=a;
+    if (b >maxvalue) {
+        maxvalue=b;
+    }
+    if (c>maxvalue)
+        maxvalue=c;
 
-    if (a>b && a>c) {
-        return a;
-    }
-    if (b>a && b>c) {
-        return b;
-    }
-    if (c>a && c>b) {
-        return c;
-    }
-    return 0;
+    return maxvalue;
 }
-
 double average(double arr[], int size) {
     double sum=0;
     for (int i=0;i<size;i++) {
