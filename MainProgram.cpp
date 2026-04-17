@@ -31,18 +31,19 @@ double celsiusToFahrenheit(double c)
 }
 
 bool isPrime(int n) {
-    if (n>1) {
+    if (n<=1) {
+        return false;
+    }
         for (int i=2; i<n;i++) {
             if (n%i==0) {
                 return false;
             }
-
         }
-    }
     return true;
 }
 
 int maxOfThree(int a, int b, int c) {
+
     if (a>b && a>c) {
         return a;
     }
@@ -52,6 +53,7 @@ int maxOfThree(int a, int b, int c) {
     if (c>a && c>b) {
         return c;
     }
+    return 0;
 }
 
 double average(double arr[], int size) {
