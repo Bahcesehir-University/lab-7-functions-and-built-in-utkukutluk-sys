@@ -38,8 +38,8 @@ bool isPrime(int n) {
             }
 
         }
-        return true;
     }
+    return true;
 }
 
 int maxOfThree(int a, int b, int c) {
