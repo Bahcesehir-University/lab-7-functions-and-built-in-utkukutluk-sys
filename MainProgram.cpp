@@ -24,6 +24,45 @@ using namespace std;
 //  Goal: quickly recall variables, cin, cout, and arithmetic.
 // ============================================================
 
+double celsiusToFahrenheit(double c)
+{
+    double fahrenheit= (c * 9.0 /5.0) + 32;
+    return fahrenheit;
+}
+
+bool isPrime(int n) {
+    if (n>1) {
+        for (int i=2; i<n;i++) {
+            if (n%i==0) {
+                return false;
+            }
+
+        }
+        return true;
+    }
+}
+
+int maxOfThree(int a, int b, int c) {
+    if (a>b && a>c) {
+        return a;
+    }
+    if (b>a && b>c) {
+        return b;
+    }
+    if (c>a && c>b) {
+        return c;
+    }
+}
+
+double average(double arr[], int size) {
+    double sum=0;
+    for (int i=0;i<size;i++) {
+        sum += arr[i];
+    }
+     double averageofarray = sum/size;
+    return  averageofarray;
+
+}
 int main()
 {
     // ----------------------------------------------------------
@@ -33,8 +72,6 @@ int main()
     // Print the result.
     // ----------------------------------------------------------
 
-    double radius;
-    const double PI = 3.14159;
 
     cout << "=== Warm-up: Circle Area ===" << endl;
 
@@ -43,7 +80,12 @@ int main()
     // TODO: Compute the area and print it
 
 
-
+    double radius;
+    cout<<"Enter the radius of the circle: ";
+    cin>>radius;
+    const double PI = 3.14159;
+    double area =PI*radius*radius;
+    cout<<"Area of the circle is: "<<area<<endl;
 
     // ============================================================
     //  SECTION 2 – CORE CONCEPTS  (~ 8 min)
@@ -100,6 +142,10 @@ int main()
     // TODO: Print floor of val
     // TODO: Print round of val
 
+    cout<<sqrt(val)<<endl;
+    cout<<ceil(val)<<endl;
+    cout<<floor(val)<<endl;
+    cout<<round(val)<<endl;
 
 
 
@@ -120,12 +166,16 @@ int main()
     // calling your function, and printing the Fahrenheit result.
     // ----------------------------------------------------------
 
-    double celsius;
+
     cout << "\n=== Temperature Converter ===" << endl;
 
     // TODO: Ask the user for a Celsius value and read it
     // TODO: Call celsiusToFahrenheit and print the result
+    double celsius;
+cout<<"Enter the temperature in Celsius: ";
+    cin>>celsius;
 
+    cout<<celsiusToFahrenheit(celsius)<<endl;
 
 
 
@@ -147,7 +197,14 @@ int main()
     // TODO: Ask the user for an integer and read it
     // TODO: Call isPrime and print "X is prime" or "X is not prime"
 
-
+cout<<"Enter the number: ";
+    cin>>number;
+    if (isPrime(number)) {
+        cout<<number <<" is a Prime Number"<<endl;
+    }
+    else {
+        cout<<number <<" is not a Prime Number"<<endl;
+    }
 
 
     // ----------------------------------------------------------
@@ -166,7 +223,13 @@ int main()
     // TODO: Ask the user for three integers and read them
     // TODO: Call maxOfThree and print the result
 
-
+cout<<"Enter the x:";
+    cin>>x;
+    cout<<"Enter the y:";
+    cin>>y;
+    cout<<"Enter the z:";
+    cin>>z;
+    cout<<"Max number is "<<maxOfThree(x,y,z)<<endl;
 
 
     // ============================================================
@@ -193,6 +256,11 @@ int main()
 
     const int SIZE = 5;
     double grades[SIZE];
+    for (int i=0;i<SIZE;i++) {
+        cout<<"Enter the number: ";
+        cin>>grades[i];
+    }
+    cout<<"Avarage of the array is: "<<average(grades,SIZE)<<endl;
 
     cout << "\n=== Challenge: Statistics ===" << endl;
 
@@ -217,3 +285,6 @@ int main()
 //    int    maxOfThree(int a, int b, int c) – Section 3-C
 //    double average(double arr[], int size) – Challenge
 // ============================================================
+
+
+
